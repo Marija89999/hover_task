@@ -1,0 +1,44 @@
+body{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.menu-container::after {
+    opacity: 1;
+    transform: scale(0);
+    transform-origin: center;
+}
+
+.menu-container:hover::after,
+.menu-container:focus::after {
+    transform: scale(1);
+}
+
+.menu-container {
+    display: block;
+    position: relative;
+    padding: 0.1em 0;
+}
+
+.menu-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: orangered;
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+}
+
+.menu-container:hover::after,
+.menu-container:focus::after {
+    opacity: 1;
+}
